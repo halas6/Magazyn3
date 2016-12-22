@@ -5,15 +5,14 @@ namespace Magazyn3.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Magazyn3.Models.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Magazyn3.Models.Entities>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "Magazyn3.Models.ApplicationDbContext";
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(Magazyn3.Models.ApplicationDbContext context)
+        protected override void Seed(Magazyn3.Models.Entities context)
         {
             //  This method will be called after migrating to the latest version.
 
