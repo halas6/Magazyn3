@@ -43,6 +43,24 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1">
+          <Destination Path="Data Source=tcp:magazyn220161109120412dbserver.database.windows.net,1433%3bInitial Catalog=magazyn%3bUser ID=math%3bPassword=Arsenal1" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\aspnet-Magazyn3-20161109093558.mdf%3bInitial Catalog=aspnet-Magazyn3-20161109093558%3bIntegrated Security=True" targetDatabaseEngineType="SQLAzureDatabase" targetServerVersion="version100" prefetchObjects="false" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Entities-Deployment" Order="2" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\aspnet-Magazyn3-20161109093558.mdf%3bInitial Catalog=aspnet-Magazyn3-20161109093558%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\Entities-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.ApplicationInsights, Version=1.0.0.4220, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -272,6 +290,7 @@
     <Content Include="Models\MagazynModel1.edmx.diagram">
       <DependentUpon>MagazynModel1.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Magazyn3halma - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\Magazyn3halma - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

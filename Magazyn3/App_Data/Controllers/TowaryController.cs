@@ -10,6 +10,7 @@ using Magazyn3.Models;
 
 namespace Magazyn3.App_Data.Controllers
 {
+    [Authorize(Roles = "Magazynier")]
     public class TowaryController : Controller
     {
         private Entities db = new Entities();
