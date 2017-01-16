@@ -23,7 +23,7 @@ else if (Request.IsAuthenticated && User.IsInRole("Uzytkownik"))
         @Html.AntiForgeryToken()
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Brak dostepu!", "", "Towary", routeValues: null, htmlAttributes: new { title = "Towary" })
+                @Html.ActionLink("Przeglądaj towary", "", "UzytkownikTowary", routeValues: null, htmlAttributes: new { title = "Towary" })
             </li>
             <li>
                 @Html.ActionLink("Cześć " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
